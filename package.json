@@ -1,0 +1,67 @@
+{
+  "name": "biojs-vis-circular-bar-chart",
+  "description": "A circular bar chart component for visualising allele frequencies, expression levels, number of samples, you name it!",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jessica-jordan/biojs-vis-circular-bar-chart",
+  "author": {
+    "name": "Jessica Jordan",
+    "email": "jessica.jordan.fe.dev@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jessica-jordan/biojs-vis-circular-bar-chart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jessica-jordan/biojs-vis-circular-bar-chart/issues"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "mkdirp build && browserify -r ./:biojs-vis-circular-bar-chart -o build/chart.js",
+    "build-browser": "npm run build",
+    "prepublish": "npm run build",
+    "watch": "watchify -r ./:biojs-vis-circular-bar-chart -v -o build/chart.js",
+    "w": "prunner \"npm run sniper\" \"npm run watch\" \"npm run watch-css\"",
+    "sniper": "sniper .",
+    "install": "undefined && npm run css",
+    "css": "parcelify ./ -c build/bundle.css",
+    "watch-css": "parcelify -w ./ -c build/bundle.css --loglevel verbose"
+  },
+  "dependencies": {
+    "d3": "^3.5.16"
+  },
+  "devDependencies": {
+    "browserify": "6.x",
+    "chai": "1.x",
+    "d3": "^3.5.16",
+    "mkdirp": "^0.5.0",
+    "mocha": "1.x",
+    "parcelify": "0.x",
+    "prunner": "1.x",
+    "sniper": "0.x",
+    "watchify": "^1.0.6"
+  },
+  "sniper": {
+    "js": [
+      "/build/chart.js"
+    ],
+    "css": [
+      "/build/bundle.css"
+    ],
+    "snippets": [
+      "examples"
+    ],
+    "first": "simple"
+  },
+  "keywords": [
+    "biojs",
+    "dataviz",
+    "visualisation",
+    "bar chart",
+    "circular",
+    "circular bar chart",
+    "biology",
+    "biojs"
+  ]
+}
