@@ -29,12 +29,14 @@
     "watch-css": "parcelify -w ./ -c build/bundle.css --loglevel verbose"
   },
   "dependencies": {
-    "d3": "^3.5.16"
+    "d3": "^3.5.16",
+    "jsonfile": "^2.3.0"
   },
   "devDependencies": {
     "browserify": "6.x",
     "chai": "1.x",
     "d3": "^3.5.16",
+    "jsonfile": "^2.3.0",
     "mkdirp": "^0.5.0",
     "mocha": "1.x",
     "parcelify": "0.x",
