@@ -1,5 +1,6 @@
 // if you don't specify a html file, the sniper will generate a div with id "rootDiv"
-const app = require("biojs-vis-circular-bar-chart");
+//const app = require("biojs-vis-circular-bar-chart");
+const VisCircularBarChart = require("biojs-vis-circular-bar-chart");
 
 
   
@@ -60,7 +61,7 @@ const myData = [
                 }];
 
 const alleleFreq = [
-{"Chrom":6,"Position":43738393,"RSID":".","Reference":"G","Alternate":"T","Consequence":"","Protein Consequence":"","Transcript Consequence":"c.-51G>T","Filter":"PASS","Annotation":"5' UTR","Flags":"","Allele Count":2,"Allele Number":39742,"Number of Homozygotes":0,"Allele Frequency":0.00005032,"Allele Count African":0,"Allele Number African":1898,"Homozygote Count African":0,"Allele Count East Asian":0,"Allele Number East Asian":2614,"Homozygote Count East Asian":0,"Allele Count European (Non-Finnish)":0,"Allele Number European (Non-Finnish)":21970,"Homozygote Count European (Non-Finnish)":0,"Allele Count Finnish":0,"Allele Number Finnish":934,"Homozygote Count Finnish":0,"Allele Count Latino":0,"Allele Number Latino":2956,"Homozygote Count Latino":0,"Allele Count Other":0,"Allele Number Other":298,"Homozygote Count Other":0,"Allele Count South Asian":2,"Allele Number South Asian":9072,"Homozygote Count South Asian":0},
+{"Chrom":6,"Position":"ju","RSID":".","Reference":"G","Alternate":"T","Consequence":"","Protein Consequence":"","Transcript Consequence":"c.-51G>T","Filter":"PASS","Annotation":"5' UTR","Flags":"","Allele Count":2,"Allele Number":39742,"Number of Homozygotes":0,"Allele Frequency":0.00005032,"Allele Count African":0,"Allele Number African":1898,"Homozygote Count African":0,"Allele Count East Asian":0,"Allele Number East Asian":2614,"Homozygote Count East Asian":0,"Allele Count European (Non-Finnish)":0,"Allele Number European (Non-Finnish)":21970,"Homozygote Count European (Non-Finnish)":0,"Allele Count Finnish":0,"Allele Number Finnish":934,"Homozygote Count Finnish":0,"Allele Count Latino":0,"Allele Number Latino":2956,"Homozygote Count Latino":0,"Allele Count Other":0,"Allele Number Other":298,"Homozygote Count Other":0,"Allele Count South Asian":2,"Allele Number South Asian":9072,"Homozygote Count South Asian":0},
 {"Chrom":6,"Position":43738403,"RSID":".","Reference":"G","Alternate":"A","Consequence":"","Protein Consequence":"","Transcript Consequence":"c.-41G>A","Filter":"PASS","Annotation":"5' UTR","Flags":"","Allele Count":2,"Allele Number":40190,"Number of Homozygotes":0,"Allele Frequency":0.00004976,"Allele Count African":0,"Allele Number African":1914,"Homozygote Count African":0,"Allele Count East Asian":0,"Allele Number East Asian":2678,"Homozygote Count East Asian":0,"Allele Count European (Non-Finnish)":1,"Allele Number European (Non-Finnish)":22184,"Homozygote Count European (Non-Finnish)":0,"Allele Count Finnish":0,"Allele Number Finnish":950,"Homozygote Count Finnish":0,"Allele Count Latino":1,"Allele Number Latino":3028,"Homozygote Count Latino":0,"Allele Count Other":0,"Allele Number Other":298,"Homozygote Count Other":0,"Allele Count South Asian":0,"Allele Number South Asian":9138,"Homozygote Count South Asian":0},
 {"Chrom":6,"Position":43738410,"RSID":".","Reference":"C","Alternate":"T","Consequence":"","Protein Consequence":"","Transcript Consequence":"c.-34C>T","Filter":"PASS","Annotation":"5' UTR","Flags":"","Allele Count":1,"Allele Number":40704,"Number of Homozygotes":0,"Allele Frequency":0.00002457,"Allele Count African":0,"Allele Number African":1964,"Homozygote Count African":0,"Allele Count East Asian":0,"Allele Number East Asian":2746,"Homozygote Count East Asian":0,"Allele Count European (Non-Finnish)":1,"Allele Number European (Non-Finnish)":22434,"Homozygote Count European (Non-Finnish)":0,"Allele Count Finnish":0,"Allele Number Finnish":966,"Homozygote Count Finnish":0,"Allele Count Latino":0,"Allele Number Latino":3100,"Homozygote Count Latino":0,"Allele Count Other":0,"Allele Number Other":298,"Homozygote Count Other":0,"Allele Count South Asian":0,"Allele Number South Asian":9196,"Homozygote Count South Asian":0},
 {"Chrom":6,"Position":43738422,"RSID":".","Reference":"A","Alternate":"G","Consequence":"","Protein Consequence":"","Transcript Consequence":"c.-22A>G","Filter":"PASS","Annotation":"5' UTR","Flags":"","Allele Count":2,"Allele Number":42106,"Number of Homozygotes":0,"Allele Frequency":0.0000475,"Allele Count African":2,"Allele Number African":2028,"Homozygote Count African":0,"Allele Count East Asian":0,"Allele Number East Asian":2942,"Homozygote Count East Asian":0,"Allele Count European (Non-Finnish)":0,"Allele Number European (Non-Finnish)":23264,"Homozygote Count European (Non-Finnish)":0,"Allele Count Finnish":0,"Allele Number Finnish":1008,"Homozygote Count Finnish":0,"Allele Count Latino":0,"Allele Number Latino":3238,"Homozygote Count Latino":0,"Allele Count Other":0,"Allele Number Other":304,"Homozygote Count Other":0,"Allele Count South Asian":0,"Allele Number South Asian":9322,"Homozygote Count South Asian":0},
@@ -121,11 +122,20 @@ const alleleFreq = [
 {"Chrom":6,"Position":43738975,"RSID":".","Reference":"T","Alternate":"G","Consequence":"p.Ser178Ala","Protein Consequence":"p.Ser178Ala","Transcript Consequence":"c.532T>G","Filter":"PASS","Annotation":"missense","Flags":"","Allele Count":1,"Allele Number":109692,"Number of Homozygotes":0,"Allele Frequency":0.000009116,"Allele Count African":0,"Allele Number African":7644,"Homozygote Count African":0,"Allele Count East Asian":0,"Allele Number East Asian":8246,"Homozygote Count East Asian":0,"Allele Count European (Non-Finnish)":1,"Allele Number European (Non-Finnish)":60002,"Homozygote Count European (Non-Finnish)":0,"Allele Count Finnish":0,"Allele Number Finnish":6208,"Homozygote Count Finnish":0,"Allele Count Latino":0,"Allele Number Latino":11008,"Homozygote Count Latino":0,"Allele Count Other":0,"Allele Number Other":792,"Homozygote Count Other":0,"Allele Count South Asian":0,"Allele Number South Asian":15792,"Homozygote Count South Asian":0},
 {"Chrom":6,"Position":43738977,"RSID":"rs25648","Reference":"C","Alternate":"T","Consequence":"p.Ser178Ser","Protein Consequence":"p.Ser178Ser","Transcript Consequence":"c.534C>T","Filter":"PASS","Annotation":"synonymous","Flags":"","Allele Count":17511,"Allele Number":111092,"Number of Homozygotes":1402,"Allele Frequency":0.1576,"Allele Count African":708,"Allele Number African":7786,"Homozygote Count African":19,"Allele Count East Asian":691,"Allele Number East Asian":8280,"Homozygote Count East Asian":34,"Allele Count European (Non-Finnish)":10443,"Allele Number European (Non-Finnish)":60798,"Homozygote Count European (Non-Finnish)":869,"Allele Count Finnish":1221,"Allele Number Finnish":6358,"Homozygote Count Finnish":112,"Allele Count Latino":1834,"Allele Number Latino":11094,"Homozygote Count Latino":141,"Allele Count Other":129,"Allele Number Other":812,"Homozygote Count Other":10,"Allele Count South Asian":2485,"Allele Number South Asian":15964,"Homozygote Count South Asian":217}];
 
-app();
+var circ = new VisCircularBarChart({
+  el: rootDiv,
+  data: alleleFreq,
+  dataTitle: "Position",
+  displayedVal: "Allele Frequency",
+  color: "darkred"
+});
+
+console.log("circ instance: " + circ.hello);
 
 // app.getData(rootDiv, url, redditPath, app.render, app); // works with the pokeapi
 // app.render(rootDiv, myData, "purple"); // works with mock data myData
-app.render(rootDiv, alleleFreq, "Position", "Allele Frequency", "purple");
+circ.hello("JJ");
+circ.render();
 // app.getJSON('vegfa-exac.json');
 
 

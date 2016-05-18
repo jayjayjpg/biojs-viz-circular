@@ -25,7 +25,7 @@
     "w": "prunner \"npm run sniper\" \"npm run watch\" \"npm run watch-css\"",
     "sniper": "sniper .",
     "install": "undefined && npm run css",
-    "css": "parcelify ./ -c build/bundle.css",
+    "css": "parcelify ./ -c build/bundle.css --loglevel verbose",
     "watch-css": "parcelify -w ./ -c build/bundle.css --loglevel verbose"
   },
   "dependencies": {
@@ -56,6 +56,7 @@
     ],
     "first": "simple"
   },
+  "style": "css/*.css",
   "keywords": [
     "biojs",
     "dataviz",
